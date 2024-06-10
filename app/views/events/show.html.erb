@@ -1,0 +1,26 @@
+<div class="p-8 my-8">
+    <div class="flex justify-between gap-2 mb-6">
+        <a href="/events" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            <span>Back to Events</span>
+        </a>
+        <a href="<%= edit_event_path(@event) %>" class="admin bg-yellow-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-yellow-700 transition duration-300 ease-in-out flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h10zm4 4a2 2 0 00-2-2h-2a2 2 0 00-2 2v14a2 2 0 002 2h2a2 2 0 002-2V7z"/>
+            </svg>
+            <span>Edit Event</span>
+        </a>
+    </div>
+    <h1 class="text-4xl font-extrabold mb-6 text-gray-900"><%= @event.name %></h1>
+    <div class="mb-6">
+        <p class="text-sm text-gray-500 mb-1">Location: <span class="font-medium text-gray-700"><%= @event.location %></span></p>
+        <p class="text-sm text-gray-500 mb-1">Price: <span class="font-medium text-gray-700"><%= price(@event) %></span></p>
+        <p class="text-sm text-gray-500 mb-1">Date and Time: <span class="font-medium text-gray-700"><%= day_and_time(@event) %></span></p>
+    </div>
+    <div class="mb-6">
+        <h2 class="text-2xl font-bold mb-4 text-gray-800">Description</h2>
+        <p class="text-gray-700 leading-relaxed"><%= @event.description %></p>
+    </div>
+</div>
