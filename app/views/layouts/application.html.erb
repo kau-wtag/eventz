@@ -10,17 +10,12 @@
     <%= javascript_importmap_tags %>
 </head>
 <body class="bg-gray-100 text-gray-800">
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-5 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-6">
-                <%# <img src="/path/to/logo.png" alt="Logo" class="h-10 w-10"> %>
-                <a href="/" class="text-xl font-semibold text-gray-900">Eventz</a>
-                <%# <a href="/events" class="text-gray-800 hover:text-gray-600">Events</a> %>
-                <%= link_to "All Events", events_path, class: "text-gray-800 hover:text-gray-600" %>
-                <!-- Add more links here as needed -->
-            </div>
-        </div>
-    </header>
+
+    <%= render "layouts/header" %>
+
+    <div>
+      <%= render "layouts/flash" %>
+    </div>
 
     <main class="container mx-auto px-5 flex">
         <%= yield %>

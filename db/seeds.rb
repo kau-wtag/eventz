@@ -28,7 +28,7 @@ Event.create!(
   description: "Indulge in a culinary journey at the Food Expo, where you'll discover a wide array of flavors and cuisines from around the globe. Sample delicious dishes, learn from renowned chefs, and explore the latest trends in food and beverage.",
   location: 'Los Angeles',
   price: 0,
-  starts_at: DateTime.new(2024, 8, 10, 10, 0, 0)
+  starts_at: DateTime.new(2024, 5, 10, 10, 0, 0)
 )
 
 Event.create!(
@@ -84,7 +84,7 @@ Event.create!(
   description: 'Savor the flavors of the vineyard at our Wine Tasting event. Sample a variety of wines from local wineries, learn about wine production and tasting techniques, and enjoy the company of fellow wine enthusiasts. Cheers to a delightful evening of wine exploration!',
   location: 'Napa Valley',
   price: 35.00,
-  starts_at: DateTime.new(2025, 3, 10, 16, 0, 0)
+  starts_at: DateTime.new(2024, 6, 20, 16, 0, 0)
 )
 
 Event.create!(
@@ -92,7 +92,7 @@ Event.create!(
   description: "Discover the magic of books at our Book Fair. Browse through a vast selection of titles, meet authors, and participate in literary discussions and workshops. Whether you're a book lover or a casual reader, our fair offers something for everyone.",
   location: 'London',
   price: 0,
-  starts_at: DateTime.new(2025, 4, 5, 13, 0, 0)
+  starts_at: DateTime.new(2024, 4, 5, 13, 0, 0)
 )
 
 puts 'Seed data generated successfully!'
