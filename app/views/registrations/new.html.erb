@@ -1,0 +1,34 @@
+<!-- app/views/registrations/new.html.erb -->
+<div class="container mx-auto py-12">
+  <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Registration for <%= link_to @event.name, @event, class: "text-blue-600 hover:underline" %></h1>
+
+  <%= form_with(model: [@event, @registration], class: "grid grid-cols-2 gap-6") do |form| %>
+    <div>
+      <%= form.label :name, class: "block text-gray-700 font-semibold mb-1" %>
+      <%= form.text_field :name, autofocus: true, class: "form-input w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-300 #{'border-red-500' if @registration.errors[:name].any?}" %>
+      <% if @registration.errors[:name].any? %>
+        <p class="text-red-500 text-xs italic"><%= @registration.errors[:name].first %></p>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.label :email, class: "block text-gray-700 font-semibold mb-1" %>
+      <%= form.email_field :email, class: "form-input w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-300 #{'border-red-500' if @registration.errors[:email].any?}" %>
+      <% if @registration.errors[:email].any? %>
+        <p class="text-red-500 text-xs italic"><%= @registration.errors[:email].first %></p>
+      <% end %>
+    </div>
+
+    <div class="col-span-2">
+      <%= form.label :how_heard, class: "block text-gray-700 font-semibold mb-1" %>
+      <%= form.select :how_heard, Registration::HOW_HEARD_OPTIONS, { prompt: 'Select an option' }, class: "form-select w-full rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-300 #{'border-red-500' if @registration.errors[:how_heard].any?}"%>
+      <% if @registration.errors[:how_heard].any? %>
+        <p class="text-red-500 text-xs italic"><%= @registration.errors[:how_heard].first %></p>
+      <% end %>
+    </div>
+
+    <div class="col-span-2">
+      <%= form.submit "Register", class: "inline-block bg-blue-600 text-white px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out" %>
+    </div>
+  <% end %>
+</div>
