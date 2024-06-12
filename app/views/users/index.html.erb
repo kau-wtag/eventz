@@ -1,0 +1,31 @@
+<!-- app/views/users/index.html.erb -->
+<div class="p-8 my-8">
+  <h1 class="text-4xl font-extrabold mb-6 text-gray-900">Users</h1>
+
+  <table class="min-w-max bg-white border rounded-lg shadow-md">
+    <thead class="bg-gray-100">
+    <tr>
+      <th class="w-1/4 px-4 py-2 border text-left text-sm font-semibold text-gray-700">Name</th>
+      <th class="w-1/4 px-4 py-2 border text-left text-sm font-semibold text-gray-700">Email</th>
+      <th class="w-1/4 px-4 py-2 border text-left text-sm font-semibold text-gray-700">Created At</th>
+      <th class="w-1/4 px-4 py-2 border text-left text-sm font-semibold text-gray-700">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr class="hover:bg-gray-50">
+        <td class="px-4 py-2 border text-sm text-gray-700"><%= user.name %></td>
+        <td class="px-4 py-2 border text-sm text-gray-700"><%= user.email %></td>
+        <td class="px-4 py-2 border text-sm text-gray-700"><%= time_ago_in_words(user.created_at) %> ago</td>
+        <td class="px-4 py-2 border text-sm text-gray-700">
+          <%= link_to 'Show', user, class: 'text-blue-600 hover:text-blue-800 transition duration-300' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <div class="mt-6">
+    <%= link_to 'New User', new_user_path, class: 'inline-block bg-green-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out' %>
+  </div>
+</div>
